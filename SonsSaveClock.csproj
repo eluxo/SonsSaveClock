@@ -6,6 +6,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="Assets\Textures\Disc.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Reference Include="0Harmony">
       <HintPath>$(SOTF_INSTALL)\BepInEx\core\0Harmony.dll</HintPath>
     </Reference>

@@ -19,16 +19,22 @@ namespace SonsSaveClock
     {
         private bool old_flag;
         private DateTime lastSaveTime;
-        private Il2CppSystem.Action<bool> callback;
+        private Il2CppSystem.Action<bool> saveCallback;
+        private Il2CppSystem.Action loadCallback;
 
         public ModUiComponent()
         {
-             this.callback = (Il2CppSystem.Action<bool>)delegate (bool v)
-             {
-                 this.updateSaveTime();
-             };
+            this.saveCallback = (Il2CppSystem.Action<bool>)delegate (bool v)
+            {
+                this.updateSaveTime();
+            };
+
+            this.loadCallback = (Il2CppSystem.Action)delegate ()
+            {
+                this.updateSaveTime();
+            };
+
             this.updateSaveTime();
-            
         }
 
         void updateSaveTime()
@@ -46,7 +52,6 @@ namespace SonsSaveClock
                 if (flag)
                 {
                     Plugin.log.LogInfo("Switching into world.");
-                    this.updateSaveTime();
                     this.wrapCallback();
                 }
                 this.old_flag = flag;
@@ -67,11 +72,18 @@ namespace SonsSaveClock
                 Plugin.log.LogError("SaveGameManager instance is null");
                 return;
             }
-            if (manager._afterSaveCallback.Contains(this.callback)) return;
 
-            Plugin.log.LogInfo("Registering on SaveGameManager");
-            manager._afterSaveCallback.Add(this.callback);
-            Plugin.log.LogInfo("SaveGameManager registered");
+            if (!manager._afterSaveCallback.Contains(this.saveCallback))
+            {
+                Plugin.log.LogInfo("register save callback");
+                manager._afterSaveCallback.Add(this.saveCallback);
+            }
+
+            if (!manager._afterLoadCallback.Contains(this.loadCallback))
+            {
+                Plugin.log.LogInfo("register load callback");
+                manager._afterLoadCallback.Add(this.loadCallback);
+            }
         }
 
         private string getTimeText()
