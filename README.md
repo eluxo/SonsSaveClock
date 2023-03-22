@@ -47,6 +47,28 @@ See LICENSE.md for details.
 
 ### Build instructions
 
-TBD
+Install VisualStuio 2023 and make sure that you have netstandard2.1 
+(required dotnet version for BepInEx) installed.
+
+Also make sure that you have the proper BepInEx version for SotF
+installed
+([I used this one](https://thunderstore.io/c/sons-of-the-forest/p/BepInEx/BepInExPack_IL2CPP/)).
+
+As it makes things easier, if you don't have to copy your libraries manually
+and as shipping those via github is not an option due to copyright issues, I
+have added an environment variable you can set to have all references
+in your project.
+
+Set the variable "SOTF_INSTALL" to the path where you have your BepInEx
+modded SotF installed. For the default use:
+
+    setx "SOTF_INSTALL" "C:\Program Files (x86)\Steam\steamapps\common\Sons Of The Forest" /M
+
+Afterwards, you can build the mod and it will automatically placed into the
+plugins folder as a post build step.
+
+Have fun! <3
+
+    
 
 

@@ -1,0 +1,420 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="0Harmony">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\core\0Harmony.dll</HintPath>
+    </Reference>
+    <Reference Include="BepInEx.Core">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\core\BepInEx.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="BepInEx.Preloader.Core">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\core\BepInEx.Preloader.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="BepInEx.Unity.Common">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\core\BepInEx.Unity.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="BepInEx.Unity.IL2CPP">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\core\BepInEx.Unity.IL2CPP.dll</HintPath>
+    </Reference>
+    <Reference Include="Endnight">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\interop\Endnight.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppInterop.Common">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\core\Il2CppInterop.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppInterop.Generator">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\core\Il2CppInterop.Generator.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppInterop.HarmonySupport">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\core\Il2CppInterop.HarmonySupport.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppInterop.Runtime">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\core\Il2CppInterop.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2Cppmscorlib">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\interop\Il2Cppmscorlib.dll</HintPath>
+    </Reference>
+    <Reference Include="LibCpp2IL">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\core\LibCpp2IL.dll</HintPath>
+    </Reference>
+    <Reference Include="Sons">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\interop\Sons.dll</HintPath>
+    </Reference>
+    <Reference Include="Sons.Ai.Utilities">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\interop\Sons.Ai.Utilities.dll</HintPath>
+    </Reference>
+    <Reference Include="Sons.Ai.Vail">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\interop\Sons.Ai.Vail.dll</HintPath>
+    </Reference>
+    <Reference Include="Sons.Animation.Mae">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\interop\Sons.Animation.Mae.dll</HintPath>
+    </Reference>
+    <Reference Include="Sons.Areas">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\interop\Sons.Areas.dll</HintPath>
+    </Reference>
+    <Reference Include="Sons.Atmosphere">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\interop\Sons.Atmosphere.dll</HintPath>
+    </Reference>
+    <Reference Include="Sons.Attributes">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\interop\Sons.Attributes.dll</HintPath>
+    </Reference>
+    <Reference Include="Sons.Cinematics">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\interop\Sons.Cinematics.dll</HintPath>
+    </Reference>
+    <Reference Include="Sons.Construction">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\interop\Sons.Construction.dll</HintPath>
+    </Reference>
+    <Reference Include="Sons.Construction.GRABS">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\interop\Sons.Construction.GRABS.dll</HintPath>
+    </Reference>
+    <Reference Include="Sons.Construction.Utils">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\interop\Sons.Construction.Utils.dll</HintPath>
+    </Reference>
+    <Reference Include="Sons.ConstructionBoltToken">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\interop\Sons.ConstructionBoltToken.dll</HintPath>
+    </Reference>
+    <Reference Include="Sons.Crest">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\interop\Sons.Crest.dll</HintPath>
+    </Reference>
+    <Reference Include="Sons.Debug">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\interop\Sons.Debug.dll</HintPath>
+    </Reference>
+    <Reference Include="Sons.Dlss">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\interop\Sons.Dlss.dll</HintPath>
+    </Reference>
+    <Reference Include="Sons.Environment">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\interop\Sons.Environment.dll</HintPath>
+    </Reference>
+    <Reference Include="Sons.Events">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\interop\Sons.Events.dll</HintPath>
+    </Reference>
+    <Reference Include="Sons.Extensions">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\interop\Sons.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Sons.FieldOfView">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\interop\Sons.FieldOfView.dll</HintPath>
+    </Reference>
+    <Reference Include="Sons.FMOD">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\interop\Sons.FMOD.dll</HintPath>
+    </Reference>
+    <Reference Include="Sons.FpsUtility">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\interop\Sons.FpsUtility.dll</HintPath>
+    </Reference>
+    <Reference Include="Sons.GameApplication">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\interop\Sons.GameApplication.dll</HintPath>
+    </Reference>
+    <Reference Include="Sons.Gameplay.GameSetup">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\interop\Sons.Gameplay.GameSetup.dll</HintPath>
+    </Reference>
+    <Reference Include="Sons.Gameplay.LevelProps">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\interop\Sons.Gameplay.LevelProps.dll</HintPath>
+    </Reference>
+    <Reference Include="Sons.Gameplay.StatusEffects">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\interop\Sons.Gameplay.StatusEffects.dll</HintPath>
+    </Reference>
+    <Reference Include="Sons.Gui">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\interop\Sons.Gui.dll</HintPath>
+    </Reference>
+    <Reference Include="Sons.Gui.Colors">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\interop\Sons.Gui.Colors.dll</HintPath>
+    </Reference>
+    <Reference Include="Sons.Gui.Multiplayer">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\interop\Sons.Gui.Multiplayer.dll</HintPath>
+    </Reference>
+    <Reference Include="Sons.Gui.Options">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\interop\Sons.Gui.Options.dll</HintPath>
+    </Reference>
+    <Reference Include="Sons.Input">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\interop\Sons.Input.dll</HintPath>
+    </Reference>
+    <Reference Include="Sons.Interfaces">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\interop\Sons.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Sons.Item">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\interop\Sons.Item.dll</HintPath>
+    </Reference>
+    <Reference Include="Sons.Loading">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\interop\Sons.Loading.dll</HintPath>
+    </Reference>
+    <Reference Include="Sons.Lodding">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\interop\Sons.Lodding.dll</HintPath>
+    </Reference>
+    <Reference Include="Sons.Multiplayer">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\interop\Sons.Multiplayer.dll</HintPath>
+    </Reference>
+    <Reference Include="Sons.ObsoleteMonos">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\interop\Sons.ObsoleteMonos.dll</HintPath>
+    </Reference>
+    <Reference Include="Sons.Physics">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\interop\Sons.Physics.dll</HintPath>
+    </Reference>
+    <Reference Include="Sons.PostProcessing">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\interop\Sons.PostProcessing.dll</HintPath>
+    </Reference>
+    <Reference Include="Sons.Quality">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\interop\Sons.Quality.dll</HintPath>
+    </Reference>
+    <Reference Include="Sons.Ragdoll">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\interop\Sons.Ragdoll.dll</HintPath>
+    </Reference>
+    <Reference Include="Sons.Rendering">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\interop\Sons.Rendering.dll</HintPath>
+    </Reference>
+    <Reference Include="Sons.Save">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\interop\Sons.Save.dll</HintPath>
+    </Reference>
+    <Reference Include="Sons.Scratchpad">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\interop\Sons.Scratchpad.dll</HintPath>
+    </Reference>
+    <Reference Include="Sons.Settings">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\interop\Sons.Settings.dll</HintPath>
+    </Reference>
+    <Reference Include="Sons.SettingsWrappers">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\interop\Sons.SettingsWrappers.dll</HintPath>
+    </Reference>
+    <Reference Include="Sons.StatSystem">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\interop\Sons.StatSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="Sons.Testing">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\interop\Sons.Testing.dll</HintPath>
+    </Reference>
+    <Reference Include="Sons.Tests">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\interop\Sons.Tests.dll</HintPath>
+    </Reference>
+    <Reference Include="Sons.Trees">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\interop\Sons.Trees.dll</HintPath>
+    </Reference>
+    <Reference Include="Sons.UiElements">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\interop\Sons.UiElements.dll</HintPath>
+    </Reference>
+    <Reference Include="Sons.Utilities">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\interop\Sons.Utilities.dll</HintPath>
+    </Reference>
+    <Reference Include="Sons.VFX">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\interop\Sons.VFX.dll</HintPath>
+    </Reference>
+    <Reference Include="Sons.VFX.SimpleUnderwater">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\interop\Sons.VFX.SimpleUnderwater.dll</HintPath>
+    </Reference>
+    <Reference Include="Sons.Weapon">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\interop\Sons.Weapon.dll</HintPath>
+    </Reference>
+    <Reference Include="TheForest.Commons">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\interop\TheForest.Commons.dll</HintPath>
+    </Reference>
+    <Reference Include="TheForest.Modding">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\interop\TheForest.Modding.dll</HintPath>
+    </Reference>
+    <Reference Include="TheForest.Utils">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\interop\TheForest.Utils.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\unity-libs\UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AccessibilityModule">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\unity-libs\UnityEngine.AccessibilityModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AIModule">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\unity-libs\UnityEngine.AIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AndroidJNIModule">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\unity-libs\UnityEngine.AndroidJNIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AnimationModule">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\unity-libs\UnityEngine.AnimationModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AssetBundleModule">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\unity-libs\UnityEngine.AssetBundleModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AudioModule">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\unity-libs\UnityEngine.AudioModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ClothModule">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\unity-libs\UnityEngine.ClothModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ClusterInputModule">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\unity-libs\UnityEngine.ClusterInputModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ClusterRendererModule">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\unity-libs\UnityEngine.ClusterRendererModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ContentLoadModule">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\unity-libs\UnityEngine.ContentLoadModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\unity-libs\UnityEngine.CoreModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.CrashReportingModule">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\unity-libs\UnityEngine.CrashReportingModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.DirectorModule">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\unity-libs\UnityEngine.DirectorModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.DSPGraphModule">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\unity-libs\UnityEngine.DSPGraphModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.GameCenterModule">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\unity-libs\UnityEngine.GameCenterModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.GIModule">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\unity-libs\UnityEngine.GIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.GridModule">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\unity-libs\UnityEngine.GridModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.HotReloadModule">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\unity-libs\UnityEngine.HotReloadModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ImageConversionModule">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\unity-libs\UnityEngine.ImageConversionModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.IMGUIModule">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\unity-libs\UnityEngine.IMGUIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.InputLegacyModule">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\unity-libs\UnityEngine.InputLegacyModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.InputModule">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\unity-libs\UnityEngine.InputModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.JSONSerializeModule">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\unity-libs\UnityEngine.JSONSerializeModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.LocalizationModule">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\unity-libs\UnityEngine.LocalizationModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ParticleSystemModule">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\unity-libs\UnityEngine.ParticleSystemModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.PerformanceReportingModule">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\unity-libs\UnityEngine.PerformanceReportingModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Physics2DModule">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\unity-libs\UnityEngine.Physics2DModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.PhysicsModule">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\unity-libs\UnityEngine.PhysicsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ProfilerModule">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\unity-libs\UnityEngine.ProfilerModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.PropertiesModule">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\unity-libs\UnityEngine.PropertiesModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\unity-libs\UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ScreenCaptureModule">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\unity-libs\UnityEngine.ScreenCaptureModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.SharedInternalsModule">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\unity-libs\UnityEngine.SharedInternalsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.SpriteMaskModule">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\unity-libs\UnityEngine.SpriteMaskModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.SpriteShapeModule">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\unity-libs\UnityEngine.SpriteShapeModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.StreamingModule">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\unity-libs\UnityEngine.StreamingModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.SubstanceModule">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\unity-libs\UnityEngine.SubstanceModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.SubsystemsModule">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\unity-libs\UnityEngine.SubsystemsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TerrainModule">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\unity-libs\UnityEngine.TerrainModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TerrainPhysicsModule">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\unity-libs\UnityEngine.TerrainPhysicsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TextCoreFontEngineModule">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\unity-libs\UnityEngine.TextCoreFontEngineModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TextCoreTextEngineModule">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\unity-libs\UnityEngine.TextCoreTextEngineModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TextRenderingModule">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\unity-libs\UnityEngine.TextRenderingModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TilemapModule">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\unity-libs\UnityEngine.TilemapModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TLSModule">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\unity-libs\UnityEngine.TLSModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UIElementsModule">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\unity-libs\UnityEngine.UIElementsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UIModule">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\unity-libs\UnityEngine.UIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UmbraModule">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\unity-libs\UnityEngine.UmbraModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityAnalyticsCommonModule">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\unity-libs\UnityEngine.UnityAnalyticsCommonModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityAnalyticsModule">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\unity-libs\UnityEngine.UnityAnalyticsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityConnectModule">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\unity-libs\UnityEngine.UnityConnectModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityCurlModule">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\unity-libs\UnityEngine.UnityCurlModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityTestProtocolModule">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\unity-libs\UnityEngine.UnityTestProtocolModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestAssetBundleModule">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\unity-libs\UnityEngine.UnityWebRequestAssetBundleModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestAudioModule">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\unity-libs\UnityEngine.UnityWebRequestAudioModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestModule">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\unity-libs\UnityEngine.UnityWebRequestModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestTextureModule">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\unity-libs\UnityEngine.UnityWebRequestTextureModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestWWWModule">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\unity-libs\UnityEngine.UnityWebRequestWWWModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.VehiclesModule">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\unity-libs\UnityEngine.VehiclesModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.VFXModule">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\unity-libs\UnityEngine.VFXModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.VideoModule">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\unity-libs\UnityEngine.VideoModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.VirtualTexturingModule">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\unity-libs\UnityEngine.VirtualTexturingModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.VRModule">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\unity-libs\UnityEngine.VRModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.WindModule">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\unity-libs\UnityEngine.WindModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.XRModule">
+      <HintPath>$(SOTF_INSTALL)\BepInEx\unity-libs\UnityEngine.XRModule.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="copy /Y &quot;$(TargetDir)$(ProjectName).dll&quot; &quot;$(SOTF_INSTALL)\BepInEx\plugins\$(ProjectName).dll&quot;" />
+  </Target>
+
+</Project>
