@@ -1,6 +1,6 @@
 {
     "name": "SonsSaveClock",
-    "version_number": "1.0.0",
+    "version_number": "1.0.1",
     "website_url": "https://github.com/eluxo/SonsSaveClock",
     "description": "Do you always forget to save? This shows you a clock timing back to your last save to remind you.",
     "dependencies": [

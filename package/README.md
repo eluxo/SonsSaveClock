@@ -9,13 +9,10 @@ not saving in time can be bad for the whole team.
 
 So this always shows me how much time has passed since my last save.
 
-### Bugs
+### Configuration
 
-- Clock resets on death. I'll remove this soon.
-
-### Issues
-
-- Config will be added.
+There is a configuration file in BepInEx\Config\net.eluxo.SonsSaveClock.cfg
+that should allow you to change the panel in size and location.
 
 ### Code
 
