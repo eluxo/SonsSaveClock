@@ -12,6 +12,7 @@ using UnityEngine;
 using TheForest.Utils;
 using System;
 using Sons.Save;
+using System.Reflection;
 
 namespace SonsSaveClock
 {
@@ -21,7 +22,8 @@ namespace SonsSaveClock
         private DateTime lastSaveTime;
         private Il2CppSystem.Action<bool> saveCallback;
         private Il2CppSystem.Action loadCallback;
-
+        private TextureLoader discTexture;
+        
         public ModUiComponent()
         {
             this.saveCallback = (Il2CppSystem.Action<bool>)delegate (bool v)
@@ -35,6 +37,7 @@ namespace SonsSaveClock
             };
 
             this.updateSaveTime();
+            this.discTexture = new TextureLoader("SonsSaveClock.Assets.Textures.disc.tex");
         }
 
         void updateSaveTime()
@@ -94,19 +97,34 @@ namespace SonsSaveClock
 
         private void drawText(string timeText)
         {
+            Texture2D tex = this.discTexture.getTexture();
+
             int center = Screen.width / 2;
-            int width = 300;
-            int height = 100;
+            int width = Plugin.configBoxWidth.Value;
+            int height = Plugin.configBoxHeight.Value;
+
+            int left = Plugin.configLeft.Value;
+            if (Plugin.configCenterHorizontal.Value)
+            {
+                left += center - (width / 2);
+            }
+            int top = Plugin.configTop.Value;
+
+            GUI.BeginGroup(new Rect(left, top, width, height));
+            if (Plugin.configShowIcon.Value) { 
+                GUI.DrawTexture(new Rect(width - height, 0, height, height), tex, ScaleMode.ScaleToFit);
+            }
 
             GUIStyle style = new GUIStyle();
             style.normal.textColor = Color.black;
             style.alignment = TextAnchor.MiddleCenter;
-            style.fontSize = 24;
+            style.fontSize = Plugin.configFontSize.Value;
             style.fontStyle = FontStyle.Bold;
-            GUI.Label(new Rect(center - (width / 2), 20, width, height), timeText, style);
+            GUI.Label(new Rect(0, 0, width, height), timeText, style);
 
             style.normal.textColor = Color.white;
-            GUI.Label(new Rect(center - (width / 2) - 2, 20 - 2, width, height), timeText, style);
+            GUI.Label(new Rect(- 2, - 2, width, height), timeText, style);
+            GUI.EndGroup();
         }
     }
 }
